@@ -43,19 +43,19 @@ const Price = () => {
   ];
 
   return (
-    <div className=' md:bg-[fbfbfb] h-[700px] '>
-      <div className='flex flex-col items-center space-y-3 '>
+    <div className='md:bg-[fbfbfb] h-[700px] mt-[100px]'> {/* Adjust mt-[100px] or add necessary margin */}
+      <div className='flex flex-col items-center space-y-3'>
         <h1 className='text-primary text-3xl md:text-4xl font-bold'>Choose the best plan</h1>
         <p className='text-gray-600'>Choose a plan that's right for your growing team, simple pricing & no hidden charges</p>
       </div>
 
-      <div className='container grid grid-cols-1 mt-14 md:grid-cols-3 gap-6 '>
+      <div className='container grid grid-cols-1 mt-14 md:grid-cols-3 gap-6'>
         {plans.map((plan, index) => (
           <motion.div 
-          variants={SlideLeft(plan.delay)}
-          initial='hidden'
-          whileInView='visible'
-          key={index} className='price-cart space-y-3 bg-slate-200 w-[290px] h-[340px] flex flex-col items-center'>
+            variants={SlideLeft(plan.delay)}
+            initial='hidden'
+            whileInView='visible'
+            key={index} className='price-cart space-y-3 bg-slate-200 w-[290px] h-[340px] flex flex-col items-center'>
             <p className='mt-6 text-black'>{plan.name}</p>
             <div className='flex items-center'>
               <p className='text-3xl font-bold text-black'>{plan.price}</p>
@@ -77,6 +77,6 @@ const Price = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Price;
